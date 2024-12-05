@@ -14,7 +14,7 @@ Transformer models, and their multi-head attention mechanisms, have emerged as a
 3. **CUDA GPU acceleration:**  
    Implement and optimize the key operations on GPUs to exploit massive parallelism, and use CUDA streams to parallelize computations across multiple heads.
 
-This comparison provides insights into how different parallel programming paradigms can accelerate the core attention mechanism in Transformers.
+This comparison will be accomplished by time performance data monitored by python scripts and the generated diagrams.
 
 ```
 g++ -o transformer transformer.cpp -std=c++11
