@@ -1,0 +1,8 @@
+Module,Time_ms
+Data Loading,26.63
+Positional Encoding,0.017
+Multi-Head Attention,0.7
+Feed Forward,0.609
+Layer Norm 1,0.017
+Layer Norm 2,0.018
+Total Execution,28.371
