@@ -1,8 +1,9 @@
 Module,Time_ms
-Data Loading,27.564
-Positional Encoding,0.013
-Multi-Head Attention,1.09
-Feed Forward,0.942
-Layer Norm 1,0.027
-Layer Norm 2,0.027
-Total Execution,30.188
+Data Loading,26.78
+Positional Encoding,0.05
+Multi-Head Attention,0.558
+Feed Forward,0.628
+Layer Norm 1,0.163
+Layer Norm 2,0.174
+MPI Communication,0.09
+Total Execution,36.087
