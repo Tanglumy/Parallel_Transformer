@@ -50,7 +50,7 @@ The core of a multi head attention kernel is the single head attention kernel. T
 - $X * W_V \rightarrow V(V$ calculation $)$
 - $Q * K^T\left(K^T\right.$ calculation $)$
 - Softmax $\left(\frac{Q * K^T}{\sqrt{d_k}}\right)$
-- Softmax $\left(\frac{Q * K^T}{\sqrt{d_k}}\right) \times V($ Softmax $*$ Vcalculation $)$
+- Softmax $\left(\frac{Q * K^T}{\sqrt{d_k}}\right) \times V( Softmax * Vcalculation )$
 
 ## Summary of Results
 
