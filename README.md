@@ -7,7 +7,8 @@ g++ -o transformer transformer.cpp -std=c++11
 ```
 ./transformer
 ```
-
+## Overview
+This project provides a highly optimized implementation of Multi-Head Self-Attention, a key component of Transformer models, for GPU architectures. Using CUDA, the project explores and evaluates two parallelization strategies: horizontal parallelization using native C++ threads and vertical parallelization using CUDA streams and events. The goal is to achieve substantial speedups for Transformer workloads, which are widely used in Natural Language Processing (NLP) and Computer Vision (CV) tasks.
 ## Background
 
 Transformer models, and their multi-head attention mechanisms, have emerged as a powerful class of architectures for tasks in NLP and beyond. While these models demonstrate remarkable performance and flexibility, their computational demands can be substantial. This project focuses on the core computational kernel of the Transformer—the multi-head self-attention operation—and examines how different parallelization strategies affect performance. We begin with a naive CPU implementation that serves as a baseline, illustrating the computational steps of the attention kernel in a straightforward, single-threaded manner. We then introduce an MPI + OpenMP version that leverages distributed memory parallelism across multiple processes as well as shared-memory parallelism within each process. Finally, we develop a CUDA-accelerated GPU version that uses efficient GPU kernels and streams to exploit the massive parallelism of modern graphics processors. By comparing these three approaches, this project highlights the trade-offs in complexity, scalability, and speedup that emerge when moving from a simple CPU-only solution to more advanced parallelization strategies, ultimately guiding practitioners in selecting the most suitable optimization approach for their specific system and workload.
@@ -16,8 +17,8 @@ Transformer models, and their multi-head attention mechanisms, have emerged as a
 
 ## Overview
 
-1. **Naive CPU version:**  
-   A single-core, non-optimized reference implementation.
+1. **Baseline Version (Plain Torch)**  
+   A single-core, non-optimized reference implementation,Use PyTorch’s built-in operations to perform matrix multiplication as a reference for performance comparison.
 
 2. **MPI + OpenMP parallelization:**
 
@@ -73,3 +74,11 @@ This image shows the performance with combined OpenMP and MPI optimizations.
 
 ![Speedup Comparison](./speedup_comparison.png)
 This image shows the speedup comparison between the different implementations.
+
+## Reference
++ [Parallelizing Multi-Head Attention on GPUs (CS259)](https://hd10.dev/posts/my-interests-2/cs259.pdf)  
+[]()
++ [NVIDIA cuBLAS Documentation: cuBLAS API Reference](https://docs.nvidia.com/cuda/cublas/index.html)
++ [MPI (MPICH / Open MPI)](https://www.mpich.org/),[Open MPI](https://www.open-mpi.org/)
++ [OpenMP Official Documentation](https://www.openmp.org/)
++ [CUDA Programming Guide](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html)
