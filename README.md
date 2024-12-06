@@ -16,6 +16,18 @@ Transformer models, and their multi-head attention mechanisms, have emerged as a
 ![Figure1](./README_IMAGE/Figure4.png)
 
 ## Overview
+MHA involves four steps:
+1.Query-Key-Value (QKV) Matrices:
+Each input sequence is transformed into Query (Q), Key (K), and Value (V) matrices via matrix multiplications.
+2.Attention Scores:
+Attention scores are computed as Scores=Q×KT , normalized using softmax.
+3.Attention Output:
+The output is computed as Output=Scores×V for each attention head.
+4.Concatenation:
+Results from all heads are concatenated and passed through a linear layer.
+Each attention head is independent of others, making it suitable for task-level parallelism.So we use MPI to assign 8 heads to each process.
+
+Each matrix operation (e.g., Q × K^T, softmax, Scores × V, matrix Transpose) involves data-parallel computations.So we Use OpenMP to parallelizing matrix operations, distribute matrix rows across CPU threads.
 
 1. **Baseline Version (pure C++)**  
    A single-core, non-optimized reference implementation,Use pure C++ to implement a transformer.
