@@ -24,4 +24,5 @@ Transformer models, and their multi-head attention mechanisms, have emerged as a
 This comparison will be accomplished by time performance data monitored by python scripts and the generated diagrams.
 
 ## Summary of Results
-{加图}
+![Performance Comparison](./baseline/Figure_1.png)
+![Performance Comparison](./MPI_transformer/Figure_1.png)
