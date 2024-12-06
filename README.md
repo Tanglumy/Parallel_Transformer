@@ -17,8 +17,8 @@ Transformer models, and their multi-head attention mechanisms, have emerged as a
 
 ## Overview
 
-1. **Baseline Version (Plain Torch)**  
-   A single-core, non-optimized reference implementation,Use PyTorch’s built-in operations to perform matrix multiplication as a reference for performance comparison.
+1. **Baseline Version (pure C++)**  
+   A single-core, non-optimized reference implementation,Use pure C++ to implement a transformer.
 
 2. **MPI + OpenMP parallelization:**
 
