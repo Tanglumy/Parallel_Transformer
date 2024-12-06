@@ -25,6 +25,28 @@ Transformer models, and their multi-head attention mechanisms, have emerged as a
 
 This comparison will be accomplished by time performance data monitored by python scripts and the generated diagrams.
 
+
+## Methods
+A single head attention kernel can be described as:
+
+$$
+Softmax\left(\frac{Q \times K^T}{\sqrt{d_k}}\right) \times V
+$$
+
+The Multi Head Attention Kernel includes three core operations:
+- General Matrix Multiplication (GEMM)
+- Softmax
+- Transpose
+
+The core of a multi head attention kernel is the single head attention kernel. The chronological order of a single head attention kernel can be described as:
+- $X * W_Q \rightarrow Q(Q$ calculation $)$
+- $X * W_K \rightarrow K$ (K calculation)
+- $X * W_V \rightarrow V(V$ calculation $)$
+- $Q * K^T\left(K^T\right.$ calculation $)$
+- Softmax $\left(\frac{Q * K^T}{\sqrt{d_k}}\right)$
+- Softmax $\left(\frac{Q * K^T}{\sqrt{d_k}}\right) \times V($ Softmax $*$ Vcalculation $)$
+
+
 ## Summary of Results
 ![Performance Comparison](./baseline/baseline.png)
 ![Performance Comparison](./MPI_transformer/OpenMP.png)
