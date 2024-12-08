@@ -1,4 +1,4 @@
-# csi596-project
+# Parallel_Transformer
 
 ```
 g++ -o transformer transformer.cpp -std=c++11
